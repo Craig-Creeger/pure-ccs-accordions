@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=yes">
 <title>Pure CSS Accordions</title>
 <style type="text/css">
 ul.accordion {
@@ -36,6 +37,7 @@ ul.accordion > li > label:hover {
 ul.accordion > li > div {
 	overflow: hidden;
 	height: 0;
+	height: auto\9; /* fallback hack for IE8 is to always show the content */
 	transition: height 1s ease;
 	/* optional styling of the accordion panel */
 	padding: 0 2em;
@@ -235,11 +237,13 @@ function expandPanel(panelIndex) {
 				</tr>
 			</table>
 			<h2>Browser Compatibility</h2>
-			<p>I have not done much testing, but it does work with these:</p>
+			<p>For IE8, the Accordion panels do not work, but the fallback is to simply always show the content. In other words, all the panels will be expanded if using IE8. I have not done much testing, but it does work with these:</p>
 			<ul>
 				<li>Chrome 37</li>
 				<li>Firefox 32</li>
-				<li>Safari 7.1</li>
+				<li>Safari 7.1 (OS X)</li>
+				<li>Safari (iOS 8)</li>
+				<li>IE 10, IE 11</li>
 			</ul>
 		</div>
 	</li>
