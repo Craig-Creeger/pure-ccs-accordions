@@ -191,7 +191,7 @@ function measureAccordionPanelHeights() {
 			}
 		}
 		accordionDivs[i].classList.add('height' + height);
-		addCSSRule(document.styleSheets[0], "ul.accordion > li > input[type='radio']:checked ~ div.height" + height + ", ul.accordion > li > div.expanded.height" + height, "height:" + height + 'px;', 0);
+		addCSSRule(sheet, "ul.accordion > li > input[type='radio']:checked ~ div.height" + height + ", ul.accordion > li > div.expanded.height" + height, "height:" + height + 'px;', 0);
 	}
 }
 
