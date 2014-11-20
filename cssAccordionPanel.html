@@ -12,6 +12,7 @@ ul.accordion {
 	border: thin solid black;
 }
 ul.accordion > li {
+	position: relative; /* so that width:100% works for div.measure */
 	list-style-type: none;
 	background-image: none;
 	margin: 0;
@@ -62,6 +63,8 @@ ul.accordion > li > div.measure {
 	/* div.measure is used by Javascript to dynamically calculate the height of each content pane (div) */
 	position: absolute;
 	visibility: hidden;
+	width:100%;
+	transition: none !important; /* Safari will attempt to measure during the transitioning height, so shut it off. */
 	height: auto !important;
 }
 /* Helpers */
